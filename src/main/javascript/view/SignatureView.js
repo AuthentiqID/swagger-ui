@@ -30,8 +30,8 @@ SwaggerUi.Views.SignatureView = Backbone.View.extend({
 
     $('.snippet', $(this.el)).hide();
     $('.description', $(this.el)).show();
-    $('.description-link', $(this.el)).addClass('selected');
-    $('.snippet-link', $(this.el)).removeClass('selected');
+    $('.description-link', $(this.el)).addClass('selected').parent().addClass('active');
+    $('.snippet-link', $(this.el)).removeClass('selected').parent().removeClass('active');
   },
 
   // handler for show sample
@@ -40,8 +40,9 @@ SwaggerUi.Views.SignatureView = Backbone.View.extend({
 
     $('.snippet', $(this.el)).show();
     $('.description', $(this.el)).hide();
-    $('.snippet-link', $(this.el)).addClass('selected');
-    $('.description-link', $(this.el)).removeClass('selected');
+    $('.snippet', $(this.el)).show();
+    $('.snippet-link', $(this.el)).addClass('selected').parent().addClass('active');
+    $('.description-link', $(this.el)).removeClass('selected').parent().removeClass('active');
   },
 
   // handler for snippet to text area

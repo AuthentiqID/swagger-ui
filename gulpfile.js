@@ -39,7 +39,10 @@ gulp.task('clean', function() {
  * JShint all *.js files
  */
 gulp.task('lint', function () {
-  return gulp.src('./src/main/javascript/**/*.js')
+  return gulp.src([
+      './src/main/javascript/**/*.js',
+      '!./src/main/javascript/bootstrap.min.js'
+    ])
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'));
 });

@@ -38,11 +38,11 @@ Handlebars.registerHelper('renderTextParam', function(param) {
     }
 
     if(isArray) {
-        result = '<textarea class=\'body-textarea' + (param.required ? ' required' : '') + '\' name=\'' + param.name + '\'' + idAtt + dataVendorExtensions;
+        result = '<textarea class=\'body-textarea form-control' + (param.required ? ' required' : '') + '\' name=\'' + param.name + '\'' + idAtt + dataVendorExtensions;
         result += ' placeholder=\'Provide multiple values in new lines' + (param.required ? ' (at least one required).' : '.') + '\'>';
         result += defaultValue + '</textarea>';
     } else {
-        var parameterClass = 'parameter';
+        var parameterClass = 'parameter form-control';
         if(param.required) {
           parameterClass += ' required';
         }
@@ -75,4 +75,26 @@ Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
         default:
             return options.inverse(this);
     }
+});
+
+Handlebars.registerHelper('classForMethod', function(method) {
+    var html_class;
+    switch(method){
+        case 'post':
+            html_class = 'primary';
+            break;
+        case 'get':
+            html_class = 'success';
+            break;
+        case 'put':
+            html_class = 'warning';
+            break;
+        case 'delete':
+            html_class = 'danger';
+            break;
+        default:
+            html_class = 'info';
+            break;
+    }
+    return html_class;
 });

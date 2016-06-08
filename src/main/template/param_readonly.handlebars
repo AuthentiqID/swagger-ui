@@ -1,7 +1,8 @@
 <td class='code'><label for='{{valueId}}'>{{name}}</label></td>
+{{!--
 <td>
     {{#if isBody}}
-        <textarea class='body-textarea' readonly='readonly' name='{{name}}' id='{{valueId}}'>{{default}}</textarea>
+        <textarea class='body-textarea form-control' readonly='readonly' name='{{name}}' id='{{valueId}}'>{{default}}</textarea>
         <div class="parameter-content-type" />
     {{else}}
         {{#if default}}
@@ -11,6 +12,7 @@
         {{/if}}
     {{/if}}
 </td>
+--}}
 <td class="markdown">{{{description}}}</td>
 <td>{{{paramType}}}</td>
 <td><span class="model-signature"></span></td>

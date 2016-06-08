@@ -1,21 +1,21 @@
-  <ul class='operations' >
-    <li class='{{method}} operation' id='{{parentId}}_{{nickname}}'>
-      <div class='heading'>
-        <h3>
+  <ul class='operations list-unstyled' >
+    <li class='{{method}} operation panel panel-{{#classForMethod method}}{{/classForMethod}}' id='{{parentId}}_{{nickname}}'>
+      <div class='heading panel-heading clearfix'>
+        <ul class='options list-unstyled pull-right'>
+          <li>
+          <a href='#!/{{encodedParentId}}/{{nickname}}' class="toggleOperation">{{{summary}}}</a>
+          </li>
+        </ul>
+        <h3 id="{{anchorId}}" class='panel-title'>
           <span class='http_method'>
-          <a href='#!/{{encodedParentId}}/{{nickname}}' class="toggleOperation">{{method}}</a>
+          <a href='#!/{{encodedParentId}}/{{nickname}}' class="toggleOperation text-uppercase">{{method}}</a>
           </span>
           <span class='path'>
           <a href='#!/{{encodedParentId}}/{{nickname}}' class="toggleOperation {{#if deprecated}}deprecated{{/if}}">{{path}}</a>
           </span>
         </h3>
-        <ul class='options'>
-          <li>
-          <a href='#!/{{encodedParentId}}/{{nickname}}' class="toggleOperation">{{{summary}}}</a>
-          </li>
-        </ul>
       </div>
-      <div class='content' id='{{parentId}}_{{nickname}}_content' style='display:none'>
+      <div class='content panel-body' id='{{parentId}}_{{nickname}}_content' style='display: none;'>
         {{#if deprecated}}
             <h4><span data-sw-translate>Warning: Deprecated</span></h4>
         {{/if}}
@@ -49,7 +49,7 @@
             <p><span class="model-signature" /></p>
             <br/>
             <div class="response-content-type" />
-            </div>
+          </div>
         {{/if}}
 
         {{#if headers}}
@@ -80,7 +80,7 @@
           <div style='margin:0;padding:0;display:inline'></div>
           {{#if parameters}}
           <h4 data-sw-translate>Parameters</h4>
-          <table class='fullwidth parameters'>
+          <table class='fullwidth parameters table'>
           <thead>
             <tr>
             <th style="width: 100px; max-width: 100px" data-sw-translate>Parameter</th>
@@ -98,7 +98,7 @@
           {{#if responseMessages}}
           <div style='margin:0;padding:0;display:inline'></div>
           <h4 data-sw-translate>Response Messages</h4>
-          <table class='fullwidth response-messages'>
+          <table class='fullwidth response-messages table'>
             <thead>
             <tr>
               <th data-sw-translate>HTTP Status Code</th>
@@ -114,8 +114,8 @@
           {{#if isReadOnly}}
           {{else}}
           <div class='sandbox_header'>
-            <input class='submit' type='submit' value='Try it out!' data-sw-translate/>
-            <a href='#' class='response_hider' style='display:none' data-sw-translate>Hide Response</a>
+            <input class='submit btn btn-primary' type='submit' value='Try it out!' data-sw-translate/>
+            <a href='#' class='response_hider btn btn-default' style='display:none' data-sw-translate>Hide Response</a>
             <span class='response_throbber' style='display:none'></span>
           </div>
           {{/if}}
