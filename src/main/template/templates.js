@@ -282,7 +282,7 @@ templates['operation'] = template({"1":function(container,depth0,helpers,partial
     + alias3((helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.encodedParentId : depth0),{"name":"sanitize","hash":{},"data":data}))
     + "/"
     + alias3((helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.nickname : depth0),{"name":"sanitize","hash":{},"data":data}))
-    + "' class=\"toggleOperation\"><span class=\"nickname\">"
+    + "' class=\"toggleOperation desc\"><span class=\"nickname\">"
     + ((stack1 = (helpers.escape || (depth0 && depth0.escape) || alias2).call(alias1,(depth0 != null ? depth0.nickname : depth0),{"name":"escape","hash":{},"data":data})) != null ? stack1 : "")
     + "()</span></a>\n          </li>\n";
 },"5":function(container,depth0,helpers,partials,data) {
@@ -354,11 +354,11 @@ templates['operation'] = template({"1":function(container,depth0,helpers,partial
     + alias3((helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.encodedParentId : depth0),{"name":"sanitize","hash":{},"data":data}))
     + "/"
     + alias3((helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.nickname : depth0),{"name":"sanitize","hash":{},"data":data}))
-    + "' class=\"toggleOperation\"><span class=\"markdown\">"
+    + "' class=\"toggleOperation desc\"><span class=\"markdown\">"
     + ((stack1 = (helpers.escape || (depth0 && depth0.escape) || alias2).call(alias1,(depth0 != null ? depth0.summary : depth0),{"name":"escape","hash":{},"data":data})) != null ? stack1 : "")
     + "</span></a>\n          </li>\n        </ul>\n        <h3 id=\""
     + alias3(((helper = (helper = helpers.anchorId || (depth0 != null ? depth0.anchorId : depth0)) != null ? helper : alias2),(typeof helper === "function" ? helper.call(alias1,{"name":"anchorId","hash":{},"data":data}) : helper)))
-    + "\" class='panel-title'>\n          <span class='http_method'>\n          <a href='#!/"
+    + "\" class='panel-title h4'>\n          <span class='http_method'>\n          <a href='#!/"
     + alias3((helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.encodedParentId : depth0),{"name":"sanitize","hash":{},"data":data}))
     + "/"
     + alias3((helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.nickname : depth0),{"name":"sanitize","hash":{},"data":data}))

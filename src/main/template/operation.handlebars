@@ -4,14 +4,14 @@
         <ul class='options list-unstyled pull-right'>
           {{#if showOperationIds}}
           <li>
-          <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation"><span class="nickname">{{{escape nickname}}}()</span></a>
+          <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation desc"><span class="nickname">{{{escape nickname}}}()</span></a>
           </li>
           {{/if}}
           <li>
-          <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation"><span class="markdown">{{{escape summary}}}</span></a>
+          <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation desc"><span class="markdown">{{{escape summary}}}</span></a>
           </li>
         </ul>
-        <h3 id="{{anchorId}}" class='panel-title'>
+        <h3 id="{{anchorId}}" class='panel-title h4'>
           <span class='http_method'>
           <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation text-uppercase">{{escape method}}</a>
           </span>
