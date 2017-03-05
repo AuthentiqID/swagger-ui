@@ -1,7 +1,10 @@
-<td class='code required'><label for='{{{escape valueId}}}'>{{{sanitize name}}}</label></td>
+<td class='code required'>
+  <label for='{{{escape valueId}}}'>{{{sanitize name}}}</label>
+  <span class="glyphicon glyphicon glyphicon-asterisk text-primary" aria-hidden="true"></span>
+</td>
 <td>
     {{#if isBody}}
-        <textarea class='body-textarea' readonly='readonly' placeholder='(required)' name='{{{sanitize name}}}' id='{{{escape valueId}}}'>{{{sanitize default}}}</textarea>
+        <textarea class='body-textarea form-control' readonly='readonly' placeholder='(required)' name='{{{sanitize name}}}' id='{{{escape valueId}}}'>{{{sanitize default}}}</textarea>
     {{else}}
         {{#if default}}
             {{{sanitize default}}}

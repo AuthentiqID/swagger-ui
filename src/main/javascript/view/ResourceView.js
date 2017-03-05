@@ -17,6 +17,7 @@ SwaggerUi.Views.ResourceView = Backbone.View.extend({
   render: function(){
     var methods = {};
 
+    this.model.anchorId = this.model.id.toLowerCase().replace('_', '-');
 
     $(this.el).html(Handlebars.templates.resource(this.model));
 
@@ -36,6 +37,7 @@ SwaggerUi.Views.ResourceView = Backbone.View.extend({
       operation.nickname = id;
       operation.parentId = this.model.id;
       operation.definitions = this.model.definitions; // make Json Schema available for JSonEditor in this operation
+      operation.anchorId = id.toLowerCase();
       this.addOperation(operation);
     }
 

@@ -6,11 +6,11 @@
 		{{else}}
 			{{#if default}}
 				<div class="editor_holder"></div>
-				<textarea class='body-textarea required' placeholder='(required)' name='{{{sanitize name}}}' id="{{{escape valueId}}}">{{{sanitize default}}}</textarea>
+				<textarea class='body-textarea required form-control' placeholder='(required)' name='{{{sanitize name}}}' id="{{{escape valueId}}}">{{{sanitize default}}}</textarea>
         <br />
         <div class="parameter-content-type" />
 			{{else}}
-				<textarea class='body-textarea required' placeholder='(required)' name='{{{sanitize name}}}' id='{{{escape valueId}}}'></textarea>
+				<textarea class='body-textarea required form-control' placeholder='(required)' name='{{{sanitize name}}}' id='{{{escape valueId}}}'></textarea>
 				<div class="editor_holder"></div>
 				<br />
 				<div class="parameter-content-type" />

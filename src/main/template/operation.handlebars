@@ -1,15 +1,7 @@
-  <ul class='operations' >
-    <li class='{{{escape method}}} operation' id='{{{escape parentId}}}_{{{escape nickname}}}'>
-      <div class='heading'>
-        <h3>
-          <span class='http_method'>
-          <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation">{{{escape method}}}</a>
-          </span>
-          <span class='path'>
-          <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation {{#if deprecated}}deprecated{{/if}}">{{{escape path}}}</a>
-          </span>
-        </h3>
-        <ul class='options'>
+  <ul class='operations list-unstyled' >
+    <li class='{{{escape method}}} operation panel panel-{{#classForMethod method}}{{/classForMethod}}' id='{{{escape parentId}}}_{{{escape nickname}}}'>
+      <div class='heading panel-heading clearfix'>
+        <ul class='options list-unstyled pull-right'>
           {{#if showOperationIds}}
           <li>
           <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation"><span class="nickname">{{{escape nickname}}}()</span></a>
@@ -19,8 +11,16 @@
           <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation"><span class="markdown">{{{escape summary}}}</span></a>
           </li>
         </ul>
+        <h3 id="{{anchorId}}" class='panel-title'>
+          <span class='http_method'>
+          <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation text-uppercase">{{escape method}}</a>
+          </span>
+          <span class='path'>
+          <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation {{#if deprecated}}deprecated{{/if}}">{{escape path}}</a>
+          </span>
+        </h3>
       </div>
-      <div class='content' id='{{sanitize encodedParentId}}_{{sanitize nickname}}_content' style='display:none'>
+      <div class='content panel-body' id='{{sanitize parentId}}_{{sanitize nickname}}_content' style='display:none'>
         {{#if deprecated}}
             <h4><span data-sw-translate>Warning: Deprecated</span></h4>
         {{/if}}
@@ -38,7 +38,7 @@
             <p><span class="model-signature" /></p>
             <br/>
             <div class="response-content-type" />
-            </div>
+          </div>
         {{/if}}
 
         {{#if headers}}
@@ -69,7 +69,7 @@
           <div style='margin:0;padding:0;display:inline'></div>
           {{#if parameters}}
           <h4 data-sw-translate>Parameters</h4>
-          <table class='fullwidth parameters'>
+          <table class='fullwidth parameters table'>
           <thead>
             <tr>
             <th class="param-name-col" data-sw-translate>Parameter</th>
@@ -87,7 +87,7 @@
           {{#if responseMessages}}
           <div style='margin:0;padding:0;display:inline'></div>
           <h4 data-sw-translate>Response Messages</h4>
-          <table class='fullwidth response-messages'>
+          <table class='fullwidth response-messages table'>
             <thead>
             <tr>
               <th data-sw-translate>HTTP Status Code</th>
@@ -103,8 +103,8 @@
           {{#if isReadOnly}}
           {{else}}
           <div class='sandbox_header'>
-            <input class='submit' type='submit' value='Try it out!' data-sw-translate/>
-            <a href='#' class='response_hider' style='display:none' data-sw-translate>Hide Response</a>
+            <input class='submit btn btn-primary' type='submit' value='Try it out!' data-sw-translate/>
+            <a href='#' class='response_hider btn btn-default' style='display:none' data-sw-translate>Hide Response</a>
             <span class='response_throbber' style='display:none'></span>
           </div>
           {{/if}}

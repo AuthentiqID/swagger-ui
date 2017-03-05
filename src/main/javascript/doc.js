@@ -138,7 +138,7 @@ window.Docs = {
 			return;
 		}
 
-		$('li#resource_' + resource).addClass('active');
+		// $('li#resource_' + resource).addClass('active');
 
 		var elem = $('li#resource_' + resource + ' ul.endpoints');
 		elem.slideDown();
