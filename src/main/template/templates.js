@@ -292,7 +292,7 @@ templates['operation'] = template({"1":function(container,depth0,helpers,partial
 },"9":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "        <h4><span data-sw-translate>Implementation Notes</span></h4>\n        <div class=\"markdown\">"
+  return "        <div class=\"markdown\">"
     + ((stack1 = (helpers.sanitize || (depth0 && depth0.sanitize) || helpers.helperMissing).call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.description : depth0),{"name":"sanitize","hash":{},"data":data})) != null ? stack1 : "")
     + "</div>\n";
 },"11":function(container,depth0,helpers,partials,data) {
@@ -338,9 +338,11 @@ templates['operation'] = template({"1":function(container,depth0,helpers,partial
 },"25":function(container,depth0,helpers,partials,data) {
     return "          <h4 data-sw-translate>Request Headers</h4>\n          <div class='block request_headers'></div>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3=container.escapeExpression;
+    var stack1, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3=container.escapeExpression;
 
-  return "  <ul class='operations list-unstyled' >\n    <li class='"
+  return "  <ul id=\""
+    + ((stack1 = (helpers.escape || (depth0 && depth0.escape) || alias2).call(alias1,(depth0 != null ? depth0.anchorId : depth0),{"name":"escape","hash":{},"data":data})) != null ? stack1 : "")
+    + "\" class='operations list-unstyled' >\n    <li class='"
     + ((stack1 = (helpers.escape || (depth0 && depth0.escape) || alias2).call(alias1,(depth0 != null ? depth0.method : depth0),{"name":"escape","hash":{},"data":data})) != null ? stack1 : "")
     + " operation panel panel-"
     + ((stack1 = (helpers.classForMethod || (depth0 && depth0.classForMethod) || alias2).call(alias1,(depth0 != null ? depth0.method : depth0),{"name":"classForMethod","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
@@ -356,9 +358,7 @@ templates['operation'] = template({"1":function(container,depth0,helpers,partial
     + alias3((helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.nickname : depth0),{"name":"sanitize","hash":{},"data":data}))
     + "' class=\"toggleOperation desc\"><span class=\"markdown\">"
     + ((stack1 = (helpers.escape || (depth0 && depth0.escape) || alias2).call(alias1,(depth0 != null ? depth0.summary : depth0),{"name":"escape","hash":{},"data":data})) != null ? stack1 : "")
-    + "</span></a>\n          </li>\n        </ul>\n        <h3 id=\""
-    + alias3(((helper = (helper = helpers.anchorId || (depth0 != null ? depth0.anchorId : depth0)) != null ? helper : alias2),(typeof helper === "function" ? helper.call(alias1,{"name":"anchorId","hash":{},"data":data}) : helper)))
-    + "\" class='panel-title h4'>\n          <span class='http_method'>\n          <a href='#!/"
+    + "</span></a>\n          </li>\n        </ul>\n        <h3 class='panel-title h4'>\n          <span class='http_method'>\n          <a href='#!/"
     + alias3((helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.encodedParentId : depth0),{"name":"sanitize","hash":{},"data":data}))
     + "/"
     + alias3((helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.nickname : depth0),{"name":"sanitize","hash":{},"data":data}))
@@ -689,9 +689,9 @@ templates['popup'] = template({"compiler":[7,">= 4.0.0"],"main":function(contain
 templates['resource'] = template({"1":function(container,depth0,helpers,partials,data) {
     return " : ";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, options, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", buffer = 
+    var stack1, helper, options, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, buffer = 
   "<div class='heading'>\n  <h2 id=\""
-    + container.escapeExpression(((helper = (helper = helpers.anchorId || (depth0 != null ? depth0.anchorId : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"anchorId","hash":{},"data":data}) : helper)))
+    + ((stack1 = (helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.anchorId : depth0),{"name":"sanitize","hash":{},"data":data})) != null ? stack1 : "")
     + "\">\n    <a href='#!/"
     + ((stack1 = (helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.id : depth0),{"name":"sanitize","hash":{},"data":data})) != null ? stack1 : "")
     + "' class=\"toggleEndpointList text-primary\" data-id=\""
@@ -699,7 +699,7 @@ templates['resource'] = template({"1":function(container,depth0,helpers,partials
     + "\">"
     + ((stack1 = (helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.name : depth0),{"name":"sanitize","hash":{},"data":data})) != null ? stack1 : "")
     + "</a> ";
-  stack1 = ((helper = (helper = helpers.summary || (depth0 != null ? depth0.summary : depth0)) != null ? helper : alias2),(options={"name":"summary","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data}),(typeof helper === alias3 ? helper.call(alias1,options) : helper));
+  stack1 = ((helper = (helper = helpers.summary || (depth0 != null ? depth0.summary : depth0)) != null ? helper : alias2),(options={"name":"summary","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data}),(typeof helper === "function" ? helper.call(alias1,options) : helper));
   if (!helpers.summary) { stack1 = helpers.blockHelperMissing.call(depth0,stack1,options)}
   if (stack1 != null) { buffer += stack1; }
   return buffer + ((stack1 = (helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.summary : depth0),{"name":"sanitize","hash":{},"data":data})) != null ? stack1 : "")

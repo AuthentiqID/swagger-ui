@@ -1,4 +1,4 @@
-  <ul class='operations list-unstyled' >
+  <ul id="{{{escape anchorId}}}" class='operations list-unstyled' >
     <li class='{{{escape method}}} operation panel panel-{{#classForMethod method}}{{/classForMethod}}' id='{{{escape parentId}}}_{{{escape nickname}}}'>
       <div class='heading panel-heading clearfix'>
         <ul class='options list-unstyled pull-right'>
@@ -11,7 +11,7 @@
           <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation desc"><span class="markdown">{{{escape summary}}}</span></a>
           </li>
         </ul>
-        <h3 id="{{anchorId}}" class='panel-title h4'>
+        <h3 class='panel-title h4'>
           <span class='http_method'>
           <a href='#!/{{sanitize encodedParentId}}/{{sanitize nickname}}' class="toggleOperation text-uppercase">{{escape method}}</a>
           </span>
@@ -25,7 +25,7 @@
             <h4><span data-sw-translate>Warning: Deprecated</span></h4>
         {{/if}}
         {{#if description}}
-        <h4><span data-sw-translate>Implementation Notes</span></h4>
+        {{!-- <h4><span data-sw-translate>Implementation Notes</span></h4> --}}
         <div class="markdown">{{{sanitize description}}}</div>
         {{/if}}
         {{#if security}}

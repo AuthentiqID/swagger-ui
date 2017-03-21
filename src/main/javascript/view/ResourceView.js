@@ -17,7 +17,10 @@ SwaggerUi.Views.ResourceView = Backbone.View.extend({
   render: function(){
     var methods = {};
 
-    this.model.anchorId = this.model.id.toLowerCase().replace('_', '-');
+    // this.model.anchorId = this.model.id.toLowerCase().replace('_', '-');
+
+    // custom implementation for supporting developers.aq.io toc module
+    this.model.anchorId = this.model.name.toLowerCase().replace('_', '-').replace(' ', '-');
 
     $(this.el).html(Handlebars.templates.resource(this.model));
 
@@ -52,11 +55,15 @@ SwaggerUi.Views.ResourceView = Backbone.View.extend({
 
     operation.number = this.number;
 
+    // custom implementation for supporting developers.aq.io toc module
+    var customOperationAnchor = operation.method + '-' + operation.path.replace(/[/<>]/g,'');
+
     // Render an operation and add it to operations li
     var operationView = new SwaggerUi.Views.OperationView({
       model: operation,
       router: this.router,
       tagName: 'li',
+      id: customOperationAnchor,
       className: 'endpoint',
       swaggerOptions: this.options.swaggerOptions,
       auths: this.auths
