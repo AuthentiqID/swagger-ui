@@ -733,8 +733,8 @@ export function getAcceptControllingResponse(responses) {
   return suitable2xxResponse || suitableDefaultResponse
 }
 
-export const createDeepLinkPath = (str) => typeof str == "string" || str instanceof String ? str.trim().replace(/\s/g, "_") : ""
-export const escapeDeepLinkPath = (str) => cssEscape( createDeepLinkPath(str) )
+export const createDeepLinkPath = (str) => typeof str == "string" || str instanceof String ? str.trim().replace(/\s/g, "-") : ""
+export const escapeDeepLinkPath = (str) => cssEscape(createDeepLinkPath(str))
 
 export const getExtensions = (defObj) => defObj.filter((v, k) => /^x-/.test(k))
 export const getCommonExtensions = (defObj) => defObj.filter((v, k) => /^pattern|maxLength|minLength|maximum|minimum/.test(k))

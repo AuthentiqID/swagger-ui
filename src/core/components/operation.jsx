@@ -86,7 +86,6 @@ export default class Operation extends PureComponent {
     let produces = operation.get("produces")
     let parameters = getList(operation, ["parameters"])
     let operationScheme = specSelectors.operationScheme(path, method)
-    let isShownKey = ["operations", tag, operationId]
     let extensions = getExtensions(operation)
 
     const Responses = getComponent("responses")
@@ -102,6 +101,7 @@ export default class Operation extends PureComponent {
     const Link = getComponent( "Link" )
 
     const { showExtensions } = getConfigs()
+    let isShownKey = [createDeepLinkPath(tag), method, createDeepLinkPath(path)];
 
     // Merge in Live Response
     if(responses && response && response.size > 0) {
@@ -112,7 +112,6 @@ export default class Operation extends PureComponent {
     let onChangeKey = [ path, method ] // Used to add values to _this_ operation ( indexed by path and method )
 
     return (
-        <div className={deprecated ? "opblock opblock-deprecated" : isShown ? `opblock opblock-${method} is-open` : `opblock opblock-${method}`} id={createDeepLinkPath(isShownKey.join("-"))} >
         <OperationSummary operationProps={operationProps} toggleShown={toggleShown} getComponent={getComponent} authActions={authActions} authSelectors={authSelectors} specPath={specPath} />
           <Collapse isOpened={isShown}>
             <div className="opblock-body">
@@ -125,6 +124,16 @@ export default class Operation extends PureComponent {
                   <div className="opblock-description">
                     <Markdown source={ description } />
                   </div>
+      <div
+        className={
+          deprecated
+            ? 'opblock opblock-deprecated'
+            : isShown
+              ? `opblock opblock-${method} is-open`
+              : `opblock opblock-${method}`
+        }
+        id={createDeepLinkPath(isShownKey.join('-').replace(/[\/{}<>]/g, '').toLowerCase())}
+      >
                 </div>
               }
               {
